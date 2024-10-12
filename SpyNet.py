@@ -1,5 +1,10 @@
 class MainMenu:
-    pass
+    def Begin(self):
+        pass
+
+    def choice(self):
+        pass
+    
 
 
 class Discover:
