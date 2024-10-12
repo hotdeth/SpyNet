@@ -1,6 +1,12 @@
 from colorama import Fore, Back, Style
+import os
+
+#This function to clear the screen
+def Clear_Screen():
+    os.system("cls")
 
 
+#Main Menu class with the Banar and the choice of the first begin
 class MainMenu:
     def Begin(self):
         baner = (Fore.RED+ r"""   _____             _   __     __ 
@@ -20,19 +26,22 @@ READ MORE ON https://github.com/hotdeth/SpyNet
 ****************************************      
 """)
      
-
+#Ask the user to Run or exit or show the requirements
     def choice(self):
         UserChoice = input("""1-Run program
 2-Show the requirement 
 3-Exit
 Input:""")
- 
+        if UserChoice == '1':
+            Clear_Screen()
         return UserChoice
     
 
-
+#This class for the Discover Method only 
 class Discover:
     pass
+
+
 
 
 class Port:
