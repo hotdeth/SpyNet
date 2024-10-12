@@ -20,7 +20,7 @@ You most have Nmap module install on you device
 <!--- details anchor -->
 - - -
 ### How we did it?
-* The main menu and the run file with README created by [HOTDETH](github.com/hotdeth)
+* The main menu and the run file with README,Avalible host  created by [HOTDETH](github.com/hotdeth)
 * The Port scanner and some feuatures has been done by [Ridha Read](github.com/RidhaAlasadi),[Hussain Jabar](github.com/AAGHH)
 - - - 
 
