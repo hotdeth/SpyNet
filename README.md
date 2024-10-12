@@ -22,6 +22,10 @@ You most have Nmap module install on you device
 ### How we did it?
 * The main menu and the run file with README,Avalible host  created by [HOTDETH](github.com/hotdeth)
 * The Port scanner and some feuatures has been done by [Ridha Read](github.com/RidhaAlasadi),[Hussain Jabar](github.com/AAGHH)
+* Some help from:
+  - [NeuralNine](https://github.com/NeuralNine)
+  - [Network Chuck](https://www.youtube.com/@NetworkChuck)
+  - [Nasef](https://www.youtube.com/@iamnasef)
 - - - 
 
 ### Install Nmap
