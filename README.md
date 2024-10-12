@@ -23,6 +23,12 @@ You most have Nmap module install on you device
 
 ### Install
 
+**Nmap**
+```
+pip install python-nmap
+
+```
+
 **Zip**
 
 ```
@@ -41,7 +47,7 @@ git clone https://github.com/hotdeth/OOP_Project
 
 ### Licensing
 
-This project is licensed under the [ license](LICENSE).
+This project is licensed under the [GNU General Public License](LICENSE).
 
-[![MIT License](https://img.shields.io/badge/license-MIT_License-blue)](https://opensource.org/licenses/MIT)
-—
+
+
