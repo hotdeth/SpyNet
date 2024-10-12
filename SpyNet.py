@@ -12,20 +12,21 @@ class MainMenu:
         print(baner)
         print(Style.RESET_ALL)
         
-        print(Fore.LIGHTRED_EX + "****************************************")
+        print( "****************************************")
         print(r"""THIS PROJECT UNDER  *GNU LICENSE*
 IF THERE IS ANY ISSUE PLEASE CONTENT WITH US ON:
 spynet4sc@gmail.com
 READ MORE ON https://github.com/hotdeth/SpyNet 
 ****************************************      
 """)
-        print(Style.RESET_ALL)
+     
 
     def choice(self):
         UserChoice = input("""1-Run program
 2-Show the requirement 
 3-Exit
 Input:""")
+ 
         return UserChoice
     
 
