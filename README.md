@@ -9,7 +9,7 @@ This project is maintained by [Ridha Karem](github.com/hotdeth),[Ridha Read](git
 <!--- details anchor -->
 ### Repository details
 
-Size of a complete clone of SecLists is currently at `130 MB`
+Size of a complete clone of SpyNet is currently at `130 MB`
 
 Cloning this repository should take  20 Second at 5MB/s speeds.
 
