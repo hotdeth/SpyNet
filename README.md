@@ -1,4 +1,4 @@
-![spynet.png](spynet2.png "spynet.png")
+![spynet.png](spynet.png "spynet.png")
 
 ### about SpyNet
 SpyNet is security tester , you can check the available host on the network and check if there is an open port or not 
