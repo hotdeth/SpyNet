@@ -18,8 +18,11 @@ your python version should the last
 You most have Nmap module install on you device
 
 <!--- details anchor -->
-
 - - -
+### How we did it?
+* The main menu and the run file with README created by [HOTDETH](github.com/hotdeth)
+* The Port scanner and some feuatures has been done by [Ridha Read](github.com/RidhaAlasadi),[Hussain Jabar](github.com/AAGHH)
+- - - 
 
 ### Install
 
@@ -44,10 +47,11 @@ git clone https://github.com/hotdeth/OOP_Project
 ```
 
 ## How do i use?
-comming soon 
+```
+comming soon
 
-
-
+```
+ 
 ### Licensing
 
 This project is licensed under the [GNU General Public License](LICENSE).
