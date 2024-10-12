@@ -1,19 +1,25 @@
+from colorama import Fore, Back, Style
+
+
 class MainMenu:
     def Begin(self):
-        baner = (r"""   _____             _   __     __ 
+        baner = (Fore.RED+ r"""   _____             _   __     __ 
   / ___/____  __  __/ | / /__  / /_
   \__ \/ __ \/ / / /  |/ / _ \/ __/
  ___/ / /_/ / /_/ / /|  /  __/ /_  
 /____/ .___/\__, /_/ |_/\___/\__/  
     /_/    /____/                  """)
         print(baner)
-        print("****************************************")
+        print(Style.RESET_ALL)
+        
+        print(Fore.LIGHTRED_EX + "****************************************")
         print(r"""THIS PROJECT UNDER  *GNU LICENSE*
 IF THERE IS ANY ISSUE PLEASE CONTENT WITH US ON:
 spynet4sc@gmail.com
 READ MORE ON https://github.com/hotdeth/SpyNet 
 ****************************************      
 """)
+        print(Style.RESET_ALL)
 
     def choice(self):
         UserChoice = input("""1-Run program
