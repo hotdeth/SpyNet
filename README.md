@@ -24,25 +24,22 @@ You most have Nmap module install on you device
 * The Port scanner and some feuatures has been done by [Ridha Read](github.com/RidhaAlasadi),[Hussain Jabar](github.com/AAGHH)
 - - - 
 
-### Install
-
-**Nmap**
+### Install Nmap
 ```
 pip install python-nmap
-
 ```
-
+### How to Install
 **Zip**
 
 ```
-wget -c https://github.com/hotdeth/OOP_project/archive/master.zip -O OOP_project.zip \
-  && unzip OOP_project.zip \
-  && rm -f OOP_project.zip
+wget -c https://github.com/hotdeth/SpyNet/archive/main.zip -O SpyNet.zip \
+  && unzip SpyNet.zip \
+  && rm -f SpyNet.zip
 ```
 
 **git**
 ```
-git clone https://github.com/hotdeth/OOP_Project
+git clone https://github.com/hotdeth/SpyNet
 
 ```
 
