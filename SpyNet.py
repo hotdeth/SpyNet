@@ -1,10 +1,49 @@
 from colorama import Fore, Back, Style
 import os
 import nmap
+#loading screen
+
+
+
+
+
+
+
+
+
+
+
+
+import time
+import sys
+print("Loading:")
+
+
+#animation = ["10%", "20%", "30%", "40%", "50%", "60%", "70%", "80%", "90%", "100%"]
+def Loading():
+
+    animation = ["[■□□□□□□□□□]","[■■□□□□□□□□]", "[■■■□□□□□□□]", "[■■■■□□□□□□]", "[■■■■■□□□□□]", "[■■■■■■□□□□]", "[■■■■■■■□□□]", "[■■■■■■■■□□]", "[■■■■■■■■■□]", "[■■■■■■■■■■]"]
+
+    for i in range(len(animation)):
+        time.sleep(1.2)
+        sys.stdout.write("\r" + animation[i % len(animation)])
+        sys.stdout.flush()
+
+    print("\n")
+
+
+
+
+
+
+
+
+
+
 
 #This function to clear the screen
 def Clear_Screen():
-    os.system("cls")
+    os.system("clear")
 
 nocolor = "\033[0;37;10m"
 azul = "\033[0;34;10m"
@@ -43,7 +82,7 @@ Input:""")
 2-Network Discover
 Input:""")
         return choice2
-#This class for the Discover Method only 
+
 
 
 
@@ -54,24 +93,27 @@ Input:""")
 
 
 class Discover:
+   
     def __init__(self):
-        ip = input("IP address Deafault is (192.168.1.1/192.168.0.1):")
-        self.ip = ip
+        self.ip = ''
 
     
-    def NetworkScan(self):
+    def NetworkScan(self): 
+        ip = input("IP address Deafault is (192.168.1.1/192.168.0.1):")
+        self.ip = ip
         if len(self.ip) == 0:
             network = '192.168.1.1/24'
         else:
             network = self.ip + '/24'
 
         print("Scanning Please Wait!")
-
         nm = nmap.PortScanner()
+        Loading()
         nm.scan(hosts=network,arguments='-sn')
         host_list = [(x,nm[x]['status']['state']) for x in nm.all_hosts()]
         for host,status in host_list:
             print(f"Host {host}")
+         
 
 
 class Port:
@@ -82,8 +124,8 @@ class Port:
 class Run:
     def __init__(self):
         self.menu = MainMenu()
-        self.discover = Discover()
         self.port = Port()
+        self.Discover = Discover()
 
 
 
@@ -103,8 +145,8 @@ class Run:
                 #port checkout 
                 pass
             elif choice2 == '2':
-                #Discover
-                pass
+               self.Discover.NetworkScan()
+              
             
 
 
@@ -128,11 +170,9 @@ class Run:
 
 
     def exit(self):
-        print(Fore.GREEN + "//\\//\\//\\//\\//\\//\\//\\")
-        print(Fore.GREEN + "Thank you for use SpyNet")
-        print(Fore.GREEN + "See you late")
-        print(Style.RESET_ALL)
-    
+        print(azul + "-----------------------------")
+        print(azul + "Thank you for use SpyNet")
+        print(azul + "See you late")
+       
 User = Run()
 User.Start()
-
