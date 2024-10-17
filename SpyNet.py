@@ -1,6 +1,8 @@
 from colorama import Fore, Back, Style
 import os
 import nmap
+import socket
+
 #loading screen
 
 
@@ -98,11 +100,14 @@ class Discover:
         self.ip = ''
 
     
-    def NetworkScan(self): 
-        ip = input("IP address Deafault is (192.168.1.1/192.168.0.1):")
+    
+
+    def NetworkScan(self):
+        ip = input("Your ip address(press enter to detect automaticlly):")
         self.ip = ip
         if len(self.ip) == 0:
-            network = '192.168.1.1/24'
+            network = socket.gethostbyname(socket.gethostname())
+            network = network + '/24'
         else:
             network = self.ip + '/24'
 
@@ -112,7 +117,8 @@ class Discover:
         nm.scan(hosts=network,arguments='-sn')
         host_list = [(x,nm[x]['status']['state']) for x in nm.all_hosts()]
         for host,status in host_list:
-            print(f"Host {host}")
+    
+            print(f"Host\t{host}\tMAC:")
          
 
 
