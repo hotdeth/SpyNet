@@ -2,6 +2,7 @@ from colorama import Fore, Back, Style
 import os
 import nmap
 import socket
+from getmac import get_mac_address
 
 #loading screen
 
@@ -21,7 +22,6 @@ import sys
 print("Loading:")
 
 
-#animation = ["10%", "20%", "30%", "40%", "50%", "60%", "70%", "80%", "90%", "100%"]
 def Loading():
 
     animation = ["[■□□□□□□□□□]","[■■□□□□□□□□]", "[■■■□□□□□□□]", "[■■■■□□□□□□]", "[■■■■■□□□□□]", "[■■■■■■□□□□]", "[■■■■■■■□□□]", "[■■■■■■■■□□]", "[■■■■■■■■■□]", "[■■■■■■■■■■]"]
@@ -101,6 +101,8 @@ class Discover:
 
     
     
+    def get_mac_address(self,IP=''):
+        mac = get_mac_address()
 
     def NetworkScan(self):
         ip = input("Your ip address(press enter to detect automaticlly):")
@@ -116,9 +118,16 @@ class Discover:
         Loading()
         nm.scan(hosts=network,arguments='-sn')
         host_list = [(x,nm[x]['status']['state']) for x in nm.all_hosts()]
+        print("")
+        n = 0
+        
+        print("HOST_NUMBER:    IP_ADD:                 MAC_ADD:               OUI:")
         for host,status in host_list:
-    
-            print(f"Host\t{host}\tMAC:")
+            mac = get_mac_address(ip=host,network_request=True)
+            if mac == None:
+                mac = get_mac_address()
+            print(f"Host:{n+1}\t\t{host}\t\tMAC:{mac}")
+            n +=1
          
 
 
@@ -182,3 +191,5 @@ class Run:
        
 User = Run()
 User.Start()
+
+# print(get_mac_address(ip='192.168.0.103',network_request=True))

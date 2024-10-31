@@ -36,6 +36,6 @@ def user():
     port_range = input("Enter the port range you want to scan (ex:20-60) :")
     return ip_address, port_range
 
-ip_address, port_range = user()
-scanner = Port(ip_address, port_range)
-scanner.scan()
+# ip_address, port_range = user()
+# scanner = Port(ip_address, port_range)
+# scanner.scan()
