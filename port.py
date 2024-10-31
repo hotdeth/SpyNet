@@ -39,3 +39,5 @@ def user():
 # ip_address, port_range = user()
 # scanner = Port(ip_address, port_range)
 # scanner.scan()
+name = "Ridha Karem"
+print(name[0:3])

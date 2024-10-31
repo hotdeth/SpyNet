@@ -3,22 +3,12 @@ import os
 import nmap
 import socket
 from getmac import get_mac_address
-
-#loading screen
-
-
-
-
-
-
-
-
-
-
-
-
+from mac_vendor_lookup import MacLookup
+import json
 import time
 import sys
+
+##Loading screen
 print("Loading:")
 
 
@@ -32,7 +22,7 @@ def Loading():
         sys.stdout.flush()
 
     print("\n")
-
+#The end Of Loading screen
 
 
 
@@ -104,6 +94,21 @@ class Discover:
     def get_mac_address(self,IP=''):
         mac = get_mac_address()
 
+    def get_oui(self,mac):
+        mac = mac[0:8]
+        mac = mac.replace(':','-').upper()
+
+        with open('oui.json') as oui_list:
+            try:
+                data = json.load(oui_list)
+                return(data[mac])
+            except:
+                return("No match")
+
+
+
+
+
     def NetworkScan(self):
         ip = input("Your ip address(press enter to detect automaticlly):")
         self.ip = ip
@@ -120,14 +125,20 @@ class Discover:
         host_list = [(x,nm[x]['status']['state']) for x in nm.all_hosts()]
         print("")
         n = 0
-        
-        print("HOST_NUMBER:    IP_ADD:                 MAC_ADD:               OUI:")
+       
+        print("HOST_NUMBER:    IP_ADD:                 MAC_ADD:                 OUI:")
         for host,status in host_list:
             mac = get_mac_address(ip=host,network_request=True)
+           
             if mac == None:
                 mac = get_mac_address()
-            print(f"Host:{n+1}\t\t{host}\t\tMAC:{mac}")
+                OUI = "YOUR DEVICE"
+        
+            OUI = self.get_oui(mac)
+
+            print(f"Host:{n+1}\t\t{host}\t\tMAC:{mac}\t {OUI}")
             n +=1
+
          
 
 
@@ -192,4 +203,3 @@ class Run:
 User = Run()
 User.Start()
 
-# print(get_mac_address(ip='192.168.0.103',network_request=True))
