@@ -16,6 +16,12 @@ Cloning this repository should take  20 Second at 5MB/s speeds.
 your python version should the last 
 
 You most have Nmap module install on you device
+### There is two option right now 
+* Port Scanner
+* Network Discover
+  - The port scanner need the #IP address and the number of port Or the range of Ports you need to scan
+  - The Network Discover need the ip address of your computer and if you type nothing the ip detects automatically 
+
 
 <!--- details anchor -->
 - - -
@@ -28,10 +34,20 @@ You most have Nmap module install on you device
   - [Nasef](https://www.youtube.com/@iamnasef)
 - - - 
 
-### Install Nmap
+
+
+### install nmap 
+
+[click here ](https://nmap.org/download)
+- - - 
+
+
+### Install python nmap
 ```
 pip install python-nmap
 ```
+
+
 ### How to Install
 **Zip**
 
@@ -49,8 +65,7 @@ git clone https://github.com/hotdeth/SpyNet
 
 ## How do i use?
 ```
-comming soon
-
+python3 SpyNet.py
 ```
  
 ### Licensing

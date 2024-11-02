@@ -5,6 +5,9 @@ import time
 import json
 import nmap
 from getmac import get_mac_address
+
+
+
 ##Loading screen
 def Loading():
     print("Loading:")
@@ -21,7 +24,7 @@ def Loading():
     print("\n")
 #The end Of Loading screen
 #This function to clear the screen
-def clearscreen():
+def Clear_Screen():
     os.system("clear")
 
 nocolor = "\033[0;37;10m"
@@ -151,7 +154,7 @@ class Run:
 
 
         if choice == '1':
-            clearscreen()
+            Clear_Screen()
             self.menu.Baner()
             choice2 = self.menu.choice2()
             if choice2 == '1':
@@ -164,7 +167,7 @@ class Run:
 
 
         elif choice == '2':
-            clearscreen()
+            Clear_Screen()
             self.menu.Baner()
             #self.Show_file_content()
         elif choice == '3':
