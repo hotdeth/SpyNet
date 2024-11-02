@@ -6,7 +6,7 @@ from getmac import get_mac_address
 from mac_vendor_lookup import MacLookup
 import json
 import time
-import sys
+import sys 
 
 ##Loading screen
 print("Loading:")
@@ -35,7 +35,10 @@ def Loading():
 
 #This function to clear the screen
 def Clear_Screen():
-    os.system("clear")
+    if sys.platform == 'win32':
+        os.system("cls")
+    elif sys.platform == 'linux':
+        os.system("clear")
 
 nocolor = "\033[0;37;10m"
 azul = "\033[0;34;10m"
