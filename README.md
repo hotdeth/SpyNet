@@ -34,10 +34,20 @@ You most have Nmap module install on you device
   - [Nasef](https://www.youtube.com/@iamnasef)
 - - - 
 
-### Install Nmap
+
+
+### install nmap 
+
+[click here ](https://nmap.org/download)
+- - - 
+
+
+### Install python nmap
 ```
 pip install python-nmap
 ```
+
+
 ### How to Install
 **Zip**
 
