@@ -1,20 +1,17 @@
-from colorama import Fore, Back, Style
 import os
-import nmap
-import socket
-from getmac import get_mac_address
-from mac_vendor_lookup import MacLookup
-import json
-import time
 import sys
-
+import socket
+import time
+import json
+import nmap
+from getmac import get_mac_address
 ##Loading screen
-print("Loading:")
-
-
 def Loading():
-
-    animation = ["[■□□□□□□□□□]","[■■□□□□□□□□]", "[■■■□□□□□□□]", "[■■■■□□□□□□]", "[■■■■■□□□□□]", "[■■■■■■□□□□]", "[■■■■■■■□□□]", "[■■■■■■■■□□]", "[■■■■■■■■■□]", "[■■■■■■■■■■]"]
+    print("Loading:")
+    animation = ["[■□□□□□□□□□]","[■■□□□□□□□□]", "[■■■□□□□□□□]",\
+                  "[■■■■□□□□□□]", "[■■■■■□□□□□]", \
+                 "[■■■■■■□□□□]", "[■■■■■■■□□□]", "[■■■■■■■■□□]",\
+                      "[■■■■■■■■■□]", "[■■■■■■■■■■]"]
 
     for i in range(len(animation)):
         time.sleep(1.2)
@@ -23,18 +20,8 @@ def Loading():
 
     print("\n")
 #The end Of Loading screen
-
-
-
-
-
-
-
-
-
-
 #This function to clear the screen
-def Clear_Screen():
+def clearscreen():
     os.system("clear")
 
 nocolor = "\033[0;37;10m"
@@ -49,7 +36,7 @@ class MainMenu:
   \__ \/ __ \/ / / /  |/ / _ \/ __/
  ___/ / /_/ / /_/ / /|  /  __/ /_  
 /____/ .___/\__, /_/ |_/\___/\__/  
-    /_/    /____/                  """)
+    /_/    /____/                  """).strip()
         print(baner)
         
         print( "****************************************")
@@ -130,7 +117,7 @@ class Discover:
         for host,status in host_list:
             mac = get_mac_address(ip=host,network_request=True)
            
-            if mac == None:
+            if mac is None:
                 mac = get_mac_address()
                 OUI = "YOUR DEVICE"
         
@@ -164,7 +151,7 @@ class Run:
 
 
         if choice == '1':
-            Clear_Screen()
+            clearscreen()
             self.menu.Baner()
             choice2 = self.menu.choice2()
             if choice2 == '1':
@@ -177,29 +164,19 @@ class Run:
 
 
         elif choice == '2':
-            Clear_Screen()
+            clearscreen()
             self.menu.Baner()
-            self.Show_file_content()
-    
+            #self.Show_file_content()
         elif choice == '3':
             self.exit()
         else:
             self.exit()
-
-
-
-
-    def Show_file_content(self):
+    #def Show_file_content(self):
         pass
-
-
-
-
     def exit(self):
         print(azul + "-----------------------------")
         print(azul + "Thank you for use SpyNet")
-        print(azul + "See you late")
-       
+        print(azul + "See you late")    
 User = Run()
 User.Start()
 
