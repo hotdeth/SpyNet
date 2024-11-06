@@ -11,7 +11,8 @@ class Port:
     def scan(self):
         print(f"Scanning IP : {self.ip_address} , with range : {self.port_range}")
         self.scanner.scan(self.ip_address, self.port_range)
-        self.display_result()  
+        self.display_result() 
+
     def display_result(self):
         resutl = self.scanner[self.ip_address]
 
@@ -35,3 +36,7 @@ def user():
 
     port_range = input("Enter the port range you want to scan (ex:20-60) :")
     return ip_address, port_range
+
+ip_address, port_range = user()
+scanner = Port(ip_address, port_range)
+scanner.scan()
