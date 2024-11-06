@@ -1,7 +1,7 @@
-# اول لاين صلو على محمد
+# yes yes it's looks similar but don't worry i put my own touched
 import nmap
-
 import ipaddress
+import time
 class Port:
     def __init__(self, ip_address, port_range):
         self.ip_address = ip_address
@@ -20,6 +20,7 @@ class Port:
             for port in resutl["tcp"]:
                 state = resutl["tcp"][port]["state"]
                 print(f'Port {port} : {state}')
+                time.sleep(0.7)
         else:
             print("No ports found in the range")
 
@@ -38,4 +39,4 @@ def user():
 
 ip_address, port_range = user()
 scanner = Port(ip_address, port_range)
-scanner.scan()
+scanner.scan() 
