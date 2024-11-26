@@ -5,6 +5,8 @@ import time
 import json
 import nmap
 from getmac import get_mac_address
+from port import *
+
 ##loading screen
 def loading():
     """This function for the loading screen"""
@@ -110,14 +112,12 @@ class Discover:
 
             print(f"Host:{n+1}\t\t{host}\t\tMAC:{mac}\t {oui}")
             n +=1
-class Port:
-    """for the port scan"""
 
 class Run:
     """this class for run the program بالترتيب"""
     def __init__(self):
         self.menu = MainMenu()
-        self.port = Port()
+        self.port = ''
         self.discover = Discover()
     def start(self):
         """this method for start the program"""
@@ -129,8 +129,12 @@ class Run:
             self.menu.baner()
             choice2 = self.menu.choice2()
             if choice2 == '1':
+                ip_address , port_range = user()
+                scanner = Port(ip_address , port_range)
+                scanner.scan()
+
+
                 #port checkout 
-                pass
             elif choice2 == '2':
                self.discover.networkscan()
         elif choice == '2':
@@ -147,5 +151,9 @@ class Run:
         print(AZUL + "-----------------------------")
         print(AZUL + "Thank you for use SpyNet")
         print(AZUL + "See you late")    
+
+
 User = Run()
 User.start()
+
+

@@ -2,6 +2,8 @@
 import nmap
 import ipaddress
 import time
+
+
 class Port:
     def __init__(self, ip_address, port_range):
         self.ip_address = ip_address
@@ -37,6 +39,3 @@ def user():
     port_range = input("Enter the port range you want to scan (ex:20-60) :")
     return ip_address, port_range
 
-ip_address, port_range = user()
-scanner = Port(ip_address, port_range)
-scanner.scan()

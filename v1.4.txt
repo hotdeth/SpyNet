@@ -1,0 +1,5 @@
+The new update of SpyNet version 1.4 should contain the following 
+>The program should not exist until the user click exit button , which we need loop to ask the user the same question for his operations
+>> for the port scan and the network discover 
+> rename the network discover to local discover 
+>
